@@ -1,103 +1,188 @@
-<section id="eventos">
-    <h2>Calendario 2026</h2>
-
-    <div class="grid-container">
-        <div class="card" onclick="mostrarMes('mayo')">
-            <h3>Mayo</h3>
-        </div>
-    </div>
-
-    <div id="calendario" style="margin-top:40px;"></div>
-</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEIPLAMIN Calendario</title>
 
 <style>
-.calendario-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.dia {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    min-height: 60px;
-    font-weight: bold;
-}
-
-.dia.header {
-    background: #ff7a00;
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #1a2a3a, #0f1720);
     color: white;
 }
 
-.dia.vacio {
-    background: transparent;
-    box-shadow: none;
+/* TITULO */
+h1 {
+    text-align: center;
+    padding: 20px;
 }
+
+/* CALENDARIO */
+.calendar {
+    max-width: 900px;
+    margin: auto;
+    background: #2c3e50;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* CABECERA */
+.calendar-header {
+    text-align: center;
+    padding: 15px;
+    font-size: 28px;
+    background: #34495e;
+}
+
+/* DIAS SEMANA */
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #ff7a00;
+}
+
+.days div {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* GRID DIAS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+/* DIA */
+.day {
+    min-height: 100px;
+    border: 1px solid #555;
+    padding: 5px;
+    position: relative;
+    background: #ecf0f1;
+    color: black;
+}
+
+/* FINES DE SEMANA */
+.weekend {
+    background: #f5cba7;
+}
+
+/* NUMERO */
+.day-number {
+    font-weight: bold;
+}
+
+/* EVENTOS */
+.event {
+    background: #d35400;
+    color: white;
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* PANEL LATERAL */
+.sidebar {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+}
+
 </style>
+</head>
 
-<script>
-function mostrarMes(mes) {
-    const calendario = document.getElementById("calendario");
+<body>
 
-    if (mes === "mayo") {
-        calendario.innerHTML = `
-        <h3>Mayo 2026</h3>
+<h1>📅 Abril 2026</h1>
 
-        <div class="calendario-grid">
-            <div class="dia header">L</div>
-            <div class="dia header">M</div>
-            <div class="dia header">M</div>
-            <div class="dia header">J</div>
-            <div class="dia header">V</div>
-            <div class="dia header">S</div>
-            <div class="dia header">D</div>
+<div class="calendar">
 
-            <div class="dia vacio"></div>
-            <div class="dia vacio"></div>
-            <div class="dia vacio"></div>
-            <div class="dia vacio"></div>
+    <div class="calendar-header">Abril 2026</div>
 
-            <div class="dia">1</div>
-            <div class="dia">2</div>
-            <div class="dia">3</div>
+    <div class="days">
+        <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
+    </div>
 
-            <div class="dia">4</div>
-            <div class="dia">5</div>
-            <div class="dia">6</div>
-            <div class="dia">7</div>
-            <div class="dia">8</div>
-            <div class="dia">9</div>
-            <div class="dia">10</div>
+    <div class="grid">
 
-            <div class="dia">11</div>
-            <div class="dia">12</div>
-            <div class="dia">13</div>
-            <div class="dia">14</div>
-            <div class="dia">15</div>
-            <div class="dia">16</div>
-            <div class="dia">17</div>
+        <!-- VACÍOS -->
+        <div class="day"></div>
+        <div class="day"></div>
 
-            <div class="dia">18</div>
-            <div class="dia">19</div>
-            <div class="dia">20</div>
-            <div class="dia">21</div>
-            <div class="dia">22</div>
-            <div class="dia">23</div>
-            <div class="dia">24</div>
+        <!-- DÍAS -->
+        <div class="day"><div class="day-number">1</div></div>
+        <div class="day"><div class="day-number">2</div></div>
+        <div class="day"><div class="day-number">3</div></div>
+        <div class="day weekend"><div class="day-number">4</div></div>
+        <div class="day weekend"><div class="day-number">5</div></div>
 
-            <div class="dia">25</div>
-            <div class="dia">26</div>
-            <div class="dia">27</div>
-            <div class="dia">28</div>
-            <div class="dia">29</div>
-            <div class="dia">30</div>
-            <div class="dia">31</div>
+        <div class="day weekend"><div class="day-number">6</div></div>
+        <div class="day"><div class="day-number">7</div></div>
+        <div class="day"><div class="day-number">8</div></div>
+
+        <div class="day">
+            <div class="day-number">9</div>
+            <div class="event">9:00 AM Introducción</div>
         </div>
-        `;
-    }
-}
-</script>
+
+        <div class="day"><div class="day-number">10</div></div>
+        <div class="day weekend"><div class="day-number">11</div></div>
+        <div class="day weekend"><div class="day-number">12</div></div>
+
+        <div class="day"><div class="day-number">13</div></div>
+        <div class="day"><div class="day-number">14</div></div>
+
+        <div class="day">
+            <div class="day-number">15</div>
+            <div class="event">Conferencia Deswik</div>
+        </div>
+
+        <div class="day"><div class="day-number">16</div></div>
+        <div class="day"><div class="day-number">17</div></div>
+        <div class="day weekend"><div class="day-number">18</div></div>
+        <div class="day weekend"><div class="day-number">19</div></div>
+
+        <div class="day weekend"><div class="day-number">20</div></div>
+        <div class="day"><div class="day-number">21</div></div>
+        <div class="day"><div class="day-number">22</div></div>
+        <div class="day"><div class="day-number">23</div></div>
+
+        <div class="day">
+            <div class="day-number">24</div>
+            <div class="event">Manual Datamine</div>
+        </div>
+
+        <div class="day weekend"><div class="day-number">25</div></div>
+        <div class="day weekend"><div class="day-number">26</div></div>
+
+        <div class="day weekend"><div class="day-number">27</div></div>
+        <div class="day"><div class="day-number">28</div></div>
+        <div class="day"><div class="day-number">29</div></div>
+
+        <div class="day">
+            <div class="day-number">30</div>
+            <div class="event">Entrega Final</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="sidebar">
+    <h3>📌 Próximas Actividades</h3>
+    <ul>
+        <li>9:00 AM - Introducción a Planeamiento</li>
+        <li>Conferencia Deswik</li>
+        <li>Manual Datamine</li>
+        <li>Entrega Final Proyecto</li>
+    </ul>
+</div>
+
+</body>
+</html>
