@@ -1,97 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEIPLAMIN - Repositorio Minero</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEIPLAMIN - Repositorio Minero</title>
 
-<style>
-/* VARIABLES DE COLOR GEIPLAMIN */
-:root {
-    --naranja: #ff7a00;
-    --naranja-oscuro: #e66e00;
-    --negro: #1a1a1a;
-    --gris-fondo: #f4f4f4;
-    --blanco: #ffffff;
-}
+    <style>
+        :root {
+            --primary: #ff7a00;
+            --primary-dark: #e56700;
+            --dark: #1a1a1a;
+            --light-bg: #fdf6ec;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #fdf6ec;
-    color: var(--negro);
-    line-height: 1.6;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-/* ENCABEZADO */
-header {
-    background: linear-gradient(135deg, var(--negro), #333);
-    padding: 60px 20px;
-    text-align: center;
-    color: white;
-    border-bottom: 5px solid var(--naranja);
-}
+        header {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--white);
+            border-bottom: 5px solid var(--primary);
+        }
 
-header h1 { margin: 0; font-size: 3rem; letter-spacing: 2px; }
-header p { opacity: 0.8; font-size: 1.2rem; }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
 
-/* NAVEGACIÓN */
-nav {
-    background: rgba(0, 0, 0, 0.95);
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        nav a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
 
-nav a:hover { color: var(--naranja); }
+        nav a:hover {
+            color: var(--primary);
+        }
 
-/* SECCIONES GENERALES */
-section {
-    padding: 80px 20px;
-    max-width: 1100px;
-    margin: auto;
-    text-align: center;
-}
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-section:nth-child(even) { background: var(--blanco); }
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
 
-.card {
-    background: white;
-    padding: 25px;
-    margin: 15px;
-    border-radius: 15px;
-    display: inline-block;
-    width: 280px;
-    vertical-align: top;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--naranja);
-}
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-button {
-    background: var(--naranja);
-    border: none;
-    padding: 12px 25px;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-button:hover { background: var(--naranja-oscuro); transform: scale(1.05); }
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
 
-/* --- SECCIÓN CALENDARIO --- */
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        button {
+            background: var(--primary);
+            border: none;
+            padding: 12px 25px;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>GEIPLAMIN</h1>
+    <p>Grupo de Estudiantes de Ingeniería de Planeamiento Minero UNMSM</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#recursos">Material</a>
+    <a href="#software">Software</a>
+    <a href="#eventos">Eventos</a>
+</nav>
+
+<section id="inicio">
+    <h2>Bienvenidos</h2>
+    <div class="grid-container">
+        <div class="card">
+            <h3>📚 Bibliografía</h3>
+            <p>Libros y artículos científicos de minería.</p>
+            <button onclick="document.getElementById('recursos').scrollIntoView()">Explorar</button>
+        </div>
+        <div class="card">
+            <h3>💻 Software</h3>
+            <p>Manuales de Datamine, Deswik y más.</p>
+            <button onclick="document.getElementById('software').scrollIntoView()">Ver guías</button>
+        </div>
+        <div class="card">
+            <h3>🎥 Eventos</h3>
+            <p>Charlas magistrales y talleres prácticos.</p>
+            <button onclick="document.getElementById('eventos').scrollIntoView()">Calendario</button>
+        </div>
+    </div>
+</section>
+
+<section id="recursos" style="background: #f4f4f4;">
+    <h2>Material Bibliográfico</h2>
+    <p>Accede a la base de datos compartida para estudiantes.</p>
+    <button onclick="window.open('https://drive.google.com')">📂 Abrir Repositorio</button>
+</section>
+
+<section id="software">
+    <h2>Software Minero</h2>
+    <div class="grid-container">
+        <div class="card"><h4>Datamine Studio</h4></div>
+        <div class="card"><h4>Deswik Suite</h4></div>
+        <div class="card"><h4>MineSight</h4></div>
+    </div>
+</section>
+
+<section id="eventos">
+    <h2>Calendario 2026</h2>
+    <div class="grid-container">
+        <div class="card">
+            <h3>Abril</h3>
+            <p>Talleres de Planeamiento</p>
+        </div>
+        <div class="card">
+            <h3>Mayo</h3>
+            <p>Visitas Técnicas</p>
+        </div>
+        <div class="card">
+            <h3>Junio</h3>
+            <p>Seminario Internacional</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 GEIPLAMIN - Universidad Nacional Mayor de San Marcos</p>
+    <p>Facultad de Ingeniería Geológica, Minera, Metalúrgica y Geográfica</p>
+</footer>
+
+</body>
+</html>
