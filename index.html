@@ -1,155 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEIPLAMIN - Calendario 2026</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fdf6ec;
-    color: #1a1a1a;
-}
-
-header {
-    background: linear-gradient(90deg, #ff7a00, #ff9a3c);
-    padding: 25px;
-    text-align: center;
-    color: white;
-}
-
-nav {
-    background: #000000;
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav a {
-    color: #ffb066;
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-footer {
-    background: #000000;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.calendar {
-    max-width: 900px;
-    margin: 30px auto;
-    background: #2c3e50;
-    border-radius: 10px;
-    overflow: hidden;
-    color: white;
-}
-
-.calendar-header {
-    text-align: center;
-    padding: 15px;
-    font-size: 28px;
-    background: #34495e;
-}
-
-.days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    background: #ff7a00;
-}
-
-.days div {
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
-
-.day {
-    min-height: 80px;
-    border: 1px solid #555;
-    padding: 5px;
-    background: #ecf0f1;
-    color: black;
-}
-
-.weekend {
-    background: #f5cba7;
-}
-
-.event {
-    background: #d35400;
-    color: white;
-    padding: 3px;
-    margin-top: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-}
-</style>
-</head>
-<body>
-
-<header>
-<h1>GEIPLAMIN</h1>
-<p>Repositorio de Planeamiento Minero UNMSM</p>
-</header>
-
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#eventos">Calendario</a>
-</nav>
-
-<section id="inicio">
-<h2>Bienvenidos</h2>
-<p>Repositorio académico enfocado en planeamiento minero para estudiantes de Ingeniería de Minas.</p>
-</section>
-
 <section id="eventos">
 <h2>Calendario 2026</h2>
-<div id="calendarios"></div>
+<p>Agenda de actividades GEIPLAMIN</p>
+
+<div id="calendarios"></div> <!-- Aquí se generarán los calendarios automáticamente -->
+
 </section>
 
-<footer>
-<p>© 2026 GEIPLAMIN - UNMSM | Creado por Angie Gutiérrez</p>
-</footer>
-
 <script>
-// Función para generar los meses
+// Generar todos los meses 2026
 const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 const diasSemana = ["L","M","X","J","V","S","D"];
-const calendarioContainer = document.getElementById("calendarios");
+const contenedor = document.getElementById("calendarios");
 
 for(let m=0; m<12; m++){
     const date = new Date(2026, m, 1);
-    const firstDay = (date.getDay() + 6) % 7; // Ajuste para que lunes=0
+    const firstDay = (date.getDay() + 6) % 7; // lunes=0
     const lastDay = new Date(2026, m+1, 0).getDate();
 
-    const calDiv = document.createElement("div");
-    calDiv.className = "calendar";
+    const cal = document.createElement("div");
+    cal.className = "calendar";
 
-    // Header
     const header = document.createElement("div");
     header.className = "calendar-header";
     header.textContent = `${meses[m]} 2026`;
-    calDiv.appendChild(header);
+    cal.appendChild(header);
 
-    // Días de la semana
     const daysRow = document.createElement("div");
     daysRow.className = "days";
     diasSemana.forEach(d => {
@@ -157,9 +32,8 @@ for(let m=0; m<12; m++){
         div.textContent = d;
         daysRow.appendChild(div);
     });
-    calDiv.appendChild(daysRow);
+    cal.appendChild(daysRow);
 
-    // Grid de días
     const grid = document.createElement("div");
     grid.className = "grid";
 
@@ -175,29 +49,23 @@ for(let m=0; m<12; m++){
         const dayDiv = document.createElement("div");
         dayDiv.className = "day";
 
-        // Marcar fines de semana
         const dayOfWeek = (firstDay + d - 1) % 7;
         if(dayOfWeek === 5 || dayOfWeek === 6) dayDiv.classList.add("weekend");
 
         dayDiv.textContent = d;
 
-        // Aquí puedes agregar eventos de ejemplo
-        /*
-        if(d===5 && m===3){ // Abril 5
-            const ev = document.createElement("div");
-            ev.className="event";
-            ev.textContent="Evento ejemplo";
-            dayDiv.appendChild(ev);
-        }
-        */
+        // Aquí puedes agregar eventos de GEIPLAMIN, ejemplo:
+        // if(d===9 && m===3){ // Abril 9
+        //   const ev = document.createElement("div");
+        //   ev.className="event";
+        //   ev.textContent="Intro Planeamiento";
+        //   dayDiv.appendChild(ev);
+        // }
 
         grid.appendChild(dayDiv);
     }
 
-    calDiv.appendChild(grid);
-    calendarioContainer.appendChild(calDiv);
+    cal.appendChild(grid);
+    contenedor.appendChild(cal);
 }
 </script>
-
-</body>
-</html>
