@@ -77,7 +77,7 @@ footer {
 
 /* Calendario */
 .calendar {
-    max-width: 950px;
+    max-width: 900px;
     margin: 30px auto;
     background: #2c3e50;
     border-radius: 10px;
@@ -96,7 +96,7 @@ footer {
     background: #ff7a00;
 }
 .days div {
-    padding: 10px 0;
+    padding: 10px;
     text-align: center;
     font-weight: bold;
 }
@@ -107,14 +107,9 @@ footer {
 .day {
     min-height: 80px;
     border: 1px solid #555;
+    padding: 5px;
     background: #ecf0f1;
     color: black;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 16px;
 }
 .weekend {
     background: #f5cba7;
@@ -156,17 +151,17 @@ footer {
 <button onclick="document.getElementById('software').scrollIntoView()">Ver recursos</button>
 </div>
 <div class="card">
-<h3>Eventos</h3>
-<p>Actividades programadas.</p>
-<button onclick="document.getElementById('eventos').scrollIntoView()">Ir al calendario</button>
-</div>
-</section>
+        <h3>Eventos y talleres 🎓</h3>
+        <p>Actividades programadas.</p>
+        <button onclick="document.getElementById('eventos').scrollIntoView()">Ir al calendario</button>
+    </div>
 
-<div class="card">
-<h3>🎥 Charlas</h3>
-<p>Grabaciones de charlas anteriores.</p>
-<button onclick="window.open('https://drive.google.com/drive/folders/15pMKip8ih5PICY_FSBlsQsqOQPW4va9Z', '_blank')">Ver Charlas</button>
-</div>
+    <div class="card">
+        <h3>🎥 Charlas</h3>
+        <p>Grabaciones de charlas anteriores.</p>
+        <button onclick="window.open('https://drive.google.com/drive/folders/15pMKip8ih5PICY_FSBlsQsqOQPW4va9Z', '_blank')">Ver Charlas</button>
+    </div>
+</section> ```
 
 <section id="recursos">
 <h2>Material Bibliográfico</h2>
@@ -182,12 +177,12 @@ footer {
 <div class="card">Licencias (acceso restringido)</div>
 </section>
 
+
 <section id="eventos">
 <h2>Calendario 2026</h2>
 <p>Agenda de actividades GEIPLAMIN</p>
 
-<!-- Función para crear calendario de un mes -->
-<!-- Abril 2026 -->
+<!-- CALENDARIO ABRIL 2026 -->
 <div class="calendar">
 <div class="calendar-header">Abril 2026</div>
 <div class="days">
@@ -211,84 +206,103 @@ footer {
 </div>
 </div>
 
-<!-- Mayo 2026 -->
+<!-- CALENDARIO MAYO 2026 -->
 <div class="calendar">
 <div class="calendar-header">Mayo 2026</div>
 <div class="days">
 <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
 </div>
 <div class="grid">
-<div class="day"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div>
-<div class="day weekend">5</div><div class="day weekend">6</div>
-<div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div>
-<div class="day weekend">12</div><div class="day weekend">13</div>
-<div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div>
-<div class="day weekend">19</div><div class="day weekend">20</div>
-<div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div>
-<div class="day weekend">26</div><div class="day weekend">27</div>
-<div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div>
+<div class="day"></div><div class="day"></div><div class="day"></div>
+<div class="day">1</div><div class="day">2</div>
+<div class="day weekend">3</div><div class="day weekend">4</div>
+<div class="day">5</div><div class="day">6</div><div class="day">7</div>
+<div class="day">8</div><div class="day">9</div>
+<div class="day weekend">10</div><div class="day weekend">11</div>
+<div class="day">12</div><div class="day">13</div><div class="day">14</div>
+<div class="day">15</div><div class="day">16</div>
+<div class="day weekend">17</div><div class="day weekend">18</div>
+<div class="day">19</div><div class="day">20</div><div class="day">21</div>
+<div class="day">22</div><div class="day">23</div>
+<div class="day weekend">24</div><div class="day weekend">25</div>
+<div class="day">26</div><div class="day">27</div><div class="day">28</div>
+<div class="day">29</div><div class="day">30</div>
+<div class="day weekend">31</div>
 </div>
 </div>
 
-<!-- Junio 2026 -->
+<!-- CALENDARIO JUNIO 2026 -->
 <div class="calendar">
 <div class="calendar-header">Junio 2026</div>
 <div class="days">
 <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
 </div>
 <div class="grid">
-<div class="day"></div><div class="day">1</div><div class="day">2</div>
-<div class="day weekend">3</div><div class="day weekend">4</div>
-<div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div>
-<div class="day weekend">10</div><div class="day weekend">11</div>
-<div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div>
-<div class="day weekend">17</div><div class="day weekend">18</div>
-<div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div>
-<div class="day weekend">24</div><div class="day weekend">25</div>
-<div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div>
+<div class="day"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div>
+<div class="day">4</div><div class="day">5</div>
+<div class="day weekend">6</div><div class="day weekend">7</div>
+<div class="day">8</div><div class="day">9</div><div class="day">10</div>
+<div class="day">11</div><div class="day">12</div>
+<div class="day weekend">13</div><div class="day weekend">14</div>
+<div class="day">15</div><div class="day">16</div><div class="day">17</div>
+<div class="day">18</div><div class="day">19</div>
+<div class="day weekend">20</div><div class="day weekend">21</div>
+<div class="day">22</div><div class="day">23</div><div class="day">24</div>
+<div class="day">25</div><div class="day">26</div>
+<div class="day weekend">27</div><div class="day weekend">28</div>
+<div class="day">29</div><div class="day">30</div>
 </div>
 </div>
 
-<!-- Julio 2026 -->
+<!-- CALENDARIO JULIO 2026 -->
 <div class="calendar">
 <div class="calendar-header">Julio 2026</div>
 <div class="days">
 <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
 </div>
 <div class="grid">
-<div class="day"></div><div class="day"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div>
-<div class="day weekend">4</div><div class="day weekend">5</div>
-<div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div>
-<div class="day weekend">11</div><div class="day weekend">12</div>
-<div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div>
-<div class="day weekend">18</div><div class="day weekend">19</div>
-<div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div>
-<div class="day weekend">25</div><div class="day weekend">26</div>
-<div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div>
+<div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div><div class="day">2</div>
+<div class="day weekend">3</div><div class="day weekend">4</div>
+<div class="day">5</div><div class="day">6</div><div class="day">7</div>
+<div class="day">8</div><div class="day">9</div>
+<div class="day weekend">10</div><div class="day weekend">11</div>
+<div class="day">12</div><div class="day">13</div><div class="day">14</div>
+<div class="day">15</div><div class="day">16</div>
+<div class="day weekend">17</div><div class="day weekend">18</div>
+<div class="day">19</div><div class="day">20</div><div class="day">21</div>
+<div class="day">22</div><div class="day">23</div>
+<div class="day weekend">24</div><div class="day weekend">25</div>
+<div class="day">26</div><div class="day">27</div><div class="day">28</div>
+<div class="day">29</div><div class="day">30</div>
+<div class="day weekend">31</div>
 </div>
 </div>
 
-<!-- Agosto 2026 -->
+<!-- CALENDARIO AGOSTO 2026 -->
 <div class="calendar">
 <div class="calendar-header">Agosto 2026</div>
 <div class="days">
 <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
 </div>
 <div class="grid">
-<div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div><div class="day">2</div>
-<div class="day weekend">3</div><div class="day weekend">4</div>
-<div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div>
-<div class="day weekend">10</div><div class="day weekend">11</div>
-<div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div>
-<div class="day weekend">17</div><div class="day weekend">18</div>
-<div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div>
-<div class="day weekend">24</div><div class="day weekend">25</div>
-<div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div>
-<div class="day weekend">31</div>
+<div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div>
+<div class="day weekend">2</div><div class="day weekend">3</div>
+<div class="day">4</div><div class="day">5</div><div class="day">6</div>
+<div class="day">7</div><div class="day">8</div>
+<div class="day weekend">9</div><div class="day weekend">10</div>
+<div class="day">11</div><div class="day">12</div><div class="day">13</div>
+<div class="day">14</div><div class="day">15</div>
+<div class="day weekend">16</div><div class="day weekend">17</div>
+<div class="day">18</div><div class="day">19</div><div class="day">20</div>
+<div class="day">21</div><div class="day">22</div>
+<div class="day weekend">23</div><div class="day weekend">24</div>
+<div class="day">25</div><div class="day">26</div><div class="day">27</div>
+<div class="day">28</div><div class="day">29</div>
+<div class="day weekend">30</div><div class="day weekend">31</div>
 </div>
 </div>
 
-<!-- Septiembre 2026 -->
+<!-- CALENDARIO SEPTIEMBRE 2026 -->
 <div class="calendar">
 <div class="calendar-header">Septiembre 2026</div>
 <div class="days">
@@ -297,41 +311,96 @@ footer {
 <div class="grid">
 <div class="day"></div><div class="day"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div>
 <div class="day weekend">4</div><div class="day weekend">5</div>
-<div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div>
+<div class="day">6</div><div class="day">7</div><div class="day">8</div>
+<div class="day">9</div><div class="day">10</div>
 <div class="day weekend">11</div><div class="day weekend">12</div>
-<div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div>
+<div class="day">13</div><div class="day">14</div><div class="day">15</div>
+<div class="day">16</div><div class="day">17</div>
 <div class="day weekend">18</div><div class="day weekend">19</div>
-<div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div>
+<div class="day">20</div><div class="day">21</div><div class="day">22</div>
+<div class="day">23</div><div class="day">24</div>
 <div class="day weekend">25</div><div class="day weekend">26</div>
-<div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div>
+<div class="day">27</div><div class="day">28</div><div class="day">29</div>
+<div class="day">30</div>
 </div>
 </div>
 
-<!-- Octubre 2026 -->
+<!-- CALENDARIO OCTUBRE 2026 -->
 <div class="calendar">
 <div class="calendar-header">Octubre 2026</div>
 <div class="days">
 <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
 </div>
 <div class="grid">
-<div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div>
-<div class="day weekend">2</div><div class="day weekend">3</div>
-<div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div>
-<div class="day weekend">9</div><div class="day weekend">10</div>
-<div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div>
-<div class="day weekend">16</div><div class="day weekend">17</div>
-<div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div>
-<div class="day weekend">23</div><div class="day weekend">24</div>
-<div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div>
-<div class="day weekend">30</div><div class="day weekend">31</div>
+<div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div><div class="day">2</div>
+<div class="day weekend">3</div><div class="day weekend">4</div>
+<div class="day">5</div><div class="day">6</div><div class="day">7</div>
+<div class="day">8</div><div class="day">9</div>
+<div class="day weekend">10</div><div class="day weekend">11</div>
+<div class="day">12</div><div class="day">13</div><div class="day">14</div>
+<div class="day">15</div><div class="day">16</div>
+<div class="day weekend">17</div><div class="day weekend">18</div>
+<div class="day">19</div><div class="day">20</div><div class="day">21</div>
+<div class="day">22</div><div class="day">23</div>
+<div class="day weekend">24</div><div class="day weekend">25</div>
+<div class="day">26</div><div class="day">27</div><div class="day">28</div>
+<div class="day">29</div><div class="day">30</div>
+<div class="day weekend">31</div>
 </div>
 </div>
 
-<!-- Noviembre 2026 -->
+<!-- CALENDARIO NOVIEMBRE 2026 -->
 <div class="calendar">
 <div class="calendar-header">Noviembre 2026</div>
 <div class="days">
 <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
 </div>
 <div class="grid">
-<div class="day"></div><div class="day"></div><div class="day">1</div><div
+<div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div>
+<div class="day weekend">2</div><div class="day weekend">3</div>
+<div class="day">4</div><div class="day">5</div><div class="day">6</div>
+<div class="day">7</div><div class="day">8</div>
+<div class="day weekend">9</div><div class="day weekend">10</div>
+<div class="day">11</div><div class="day">12</div><div class="day">13</div>
+<div class="day">14</div><div class="day">15</div>
+<div class="day weekend">16</div><div class="day weekend">17</div>
+<div class="day">18</div><div class="day">19</div><div class="day">20</div>
+<div class="day">21</div><div class="day">22</div>
+<div class="day weekend">23</div><div class="day weekend">24</div>
+<div class="day">25</div><div class="day">26</div><div class="day">27</div>
+<div class="day">28</div><div class="day">29</div>
+<div class="day weekend">30</div>
+</div>
+</div>
+
+<!-- CALENDARIO DICIEMBRE 2026 -->
+<div class="calendar">
+<div class="calendar-header">Diciembre 2026</div>
+<div class="days">
+<div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
+</div>
+<div class="grid">
+<div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div><div class="day">2</div>
+<div class="day weekend">3</div><div class="day weekend">4</div>
+<div class="day">5</div><div class="day">6</div><div class="day">7</div>
+<div class="day">8</div><div class="day">9</div>
+<div class="day weekend">10</div><div class="day weekend">11</div>
+<div class="day">12</div><div class="day">13</div><div class="day">14</div>
+<div class="day">15</div><div class="day">16</div>
+<div class="day weekend">17</div><div class="day weekend">18</div>
+<div class="day">19</div><div class="day">20</div><div class="day">21</div>
+<div class="day">22</div><div class="day">23</div>
+<div class="day weekend">24</div><div class="day weekend">25</div>
+<div class="day">26</div><div class="day">27</div><div class="day">28</div>
+<div class="day">29</div><div class="day">30</div>
+<div class="day weekend">31</div>
+</div>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 GEIPLAMIN - Todos los derechos reservados</p>
+</footer>
+</body>
+</html>
