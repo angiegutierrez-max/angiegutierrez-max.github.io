@@ -16,20 +16,16 @@ body {
 /* Header */
 header {
     background-image: url('GEIPLAMIN.png'); 
-    background-size: cover;    /* Para que cubra todo el ancho */
+    background-size: contain;    /* CAMBIA ESTO: 'contain' hace que la imagen se vea COMPLETA */
     background-position: center;
     background-repeat: no-repeat;
-    height: 350px;             /* Ajusta la altura a tu gusto */
+    background-color: #ff7a00;   /* Esto rellena los costados con el mismo naranja */
+    height: 300px;               /* Ajusta este número si quieres que sea más alto o bajo */
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-/* Ocultamos el texto viejo */
-header h1, header p {
-    display: none;
-}
-
+    
 /* Navegación */
 nav {
     background: #000000;
