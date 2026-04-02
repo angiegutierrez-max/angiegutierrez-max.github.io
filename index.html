@@ -8,19 +8,19 @@
 body {
     margin: 0;
     font-family: Arial;
-    background: #fdf6ec;
+    background: #fdf6ec; /* crema */
     color: #1a1a1a;
 }
 
 header {
-    background: linear-gradient(90deg, #ff7a00, #ff9a3c);
+    background: linear-gradient(90deg, #ff7a00, #ff9a3c); /* naranja */
     padding: 25px;
     text-align: center;
     color: white;
 }
 
 nav {
-    background: #000000;
+    background: #000000; /* negro */
     padding: 15px;
     text-align: center;
     position: sticky;
@@ -28,7 +28,7 @@ nav {
 }
 
 nav a {
-    color: #ffb066;
+    color: #ffb066; /* naranja claro */
     margin: 15px;
     text-decoration: none;
     font-weight: bold;
@@ -50,13 +50,17 @@ section {
 }
 
 button {
-    background: #ff7a00;
+    background: #ff7a00; /* naranja */
     border: none;
     padding: 10px 15px;
     color: white;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+}
+
+button:hover {
+    background: #e56700;
 }
 
 footer {
@@ -77,70 +81,60 @@ footer {
 
 <nav>
 <a href="#inicio">Inicio</a>
-<a href="#recursos">Material</a>
+<a href="#recursos">Recursos</a>
 <a href="#software">Software</a>
 <a href="#eventos">Eventos</a>
 </nav>
 
 <section id="inicio">
 <h2>Bienvenidos</h2>
-<p>Repositorio académico para estudiantes de Ingeniería de Minas enfocado en planeamiento minero.</p>
+<p>Este repositorio reúne materiales, herramientas y contenido académico para estudiantes de Ingeniería de Minas.</p>
 
 <div class="card">
-<h3>📚 Material Bibliográfico</h3>
-<p>Libros, PDFs y contenido académico de planeamiento.</p>
-<button>Explorar</button>
+<h3>📚 Apuntes</h3>
+<p>Material por cursos.</p>
+<button>Ver más</button>
 </div>
 
 <div class="card">
 <h3>💻 Software</h3>
-<p>Manuales y recursos de software minero.</p>
-<button>Ver recursos</button>
+<p>Datamine, Deswik y más.</p>
+<button>Explorar</button>
 </div>
 
 <div class="card">
 <h3>🎥 Charlas</h3>
-<p>Eventos, ponencias y contenido audiovisual.</p>
+<p>Eventos y grabaciones.</p>
 <button>Ver charlas</button>
 </div>
 
 </section>
 
 <section id="recursos">
-<h2>Material Bibliográfico</h2>
-<p>Aquí encontrarás libros, apuntes y material académico de planeamiento minero.</p>
+<h2>Recursos</h2>
+<p>Aquí podrás subir PDFs, guías y material académico.</p>
 
 <button onclick="window.open('https://drive.google.com')">
-Acceder al material
+Ir a repositorio
 </button>
 
 </section>
 
 <section id="software">
-<h2>Software</h2>
-<p>Manuales, guías y acceso a licencias de software minero.</p>
+<h2>Software Minero</h2>
+<p>Herramientas usadas en planeamiento minero.</p>
 
-<div class="card">
-Manual Datamine
-</div>
-
-<div class="card">
-Manual Deswik
-</div>
-
-<div class="card">
-Licencias (acceso restringido)
-</div>
+<div class="card">Datamine</div>
+<div class="card">Deswik</div>
+<div class="card">MinePlan</div>
 
 </section>
 
 <section id="eventos">
 <h2>Eventos</h2>
-<p>Calendario de actividades, charlas y eventos académicos.</p>
+<p>Charlas, visitas técnicas y actividades del grupo.</p>
 
-<div class="card">
-📅 Próximamente: Calendario GEIPLAMIN
-</div>
+<button>Próximamente</button>
 
 </section>
 
