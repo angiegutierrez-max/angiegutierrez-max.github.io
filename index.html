@@ -15,10 +15,19 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(90deg, #ff7a00, #ff9a3c);
-    padding: 25px;
-    text-align: center;
-    color: white;
+    background-image: url('GEIPLAMIN.png'); 
+    background-size: cover;    /* Para que cubra todo el ancho */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;             /* Ajusta la altura a tu gusto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ocultamos el texto viejo */
+header h1, header p {
+    display: none;
 }
 
 /* Navegación */
