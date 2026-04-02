@@ -45,8 +45,9 @@ section {
     margin: 15px;
     border-radius: 12px;
     display: inline-block;
-    width: 250px;
+    width: 260px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    vertical-align: top;
 }
 
 button {
@@ -57,6 +58,10 @@ button {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+}
+
+button:hover {
+    background: #e56700;
 }
 
 footer {
@@ -84,24 +89,24 @@ footer {
 
 <section id="inicio">
 <h2>Bienvenidos</h2>
-<p>Repositorio académico para estudiantes de Ingeniería de Minas enfocado en planeamiento minero.</p>
+<p>Repositorio académico enfocado en planeamiento minero para estudiantes de Ingeniería de Minas.</p>
 
 <div class="card">
 <h3>📚 Material Bibliográfico</h3>
 <p>Libros, PDFs y contenido académico de planeamiento.</p>
-<button>Explorar</button>
+<button onclick="document.getElementById('recursos').scrollIntoView()">Explorar</button>
 </div>
 
 <div class="card">
 <h3>💻 Software</h3>
 <p>Manuales y recursos de software minero.</p>
-<button>Ver recursos</button>
+<button onclick="document.getElementById('software').scrollIntoView()">Ver recursos</button>
 </div>
 
 <div class="card">
 <h3>🎥 Charlas</h3>
-<p>Eventos, ponencias y contenido audiovisual.</p>
-<button>Ver charlas</button>
+<p>Eventos y contenido audiovisual.</p>
+<button onclick="document.getElementById('eventos').scrollIntoView()">Ir al calendario</button>
 </div>
 
 </section>
@@ -120,26 +125,50 @@ Acceder al material
 <h2>Software</h2>
 <p>Manuales, guías y acceso a licencias de software minero.</p>
 
-<div class="card">
-Manual Datamine
-</div>
-
-<div class="card">
-Manual Deswik
-</div>
-
-<div class="card">
-Licencias (acceso restringido)
-</div>
+<div class="card">Manual Datamine</div>
+<div class="card">Manual Deswik</div>
+<div class="card">Licencias (acceso restringido)</div>
 
 </section>
 
 <section id="eventos">
-<h2>Eventos</h2>
-<p>Calendario de actividades, charlas y eventos académicos.</p>
+<h2>Calendario 2026</h2>
+<p>Agenda de actividades GEIPLAMIN</p>
 
 <div class="card">
-📅 Próximamente: Calendario GEIPLAMIN
+<h3>Abril 2026</h3>
+<p>
+L M M J V S D<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 2 3 4 5<br>
+6 7 8 9 10 11 12<br>
+13 14 15 16 17 18 19<br>
+20 21 22 23 24 25 26<br>
+27 28 29 30
+</p>
+</div>
+
+<div class="card">
+<h3>Mayo 2026</h3>
+<p>
+L M M J V S D<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 2 3<br>
+4 5 6 7 8 9 10<br>
+11 12 13 14 15 16 17<br>
+18 19 20 21 22 23 24<br>
+25 26 27 28 29 30 31
+</p>
+</div>
+
+<div class="card">
+<h3>Junio 2026</h3>
+<p>
+L M M J V S D<br>
+1 2 3 4 5 6 7<br>
+8 9 10 11 12 13 14<br>
+15 16 17 18 19 20 21<br>
+22 23 24 25 26 27 28<br>
+29 30
+</p>
 </div>
 
 </section>
