@@ -3,23 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEIPLAMIN Calendario</title>
+<title>Calendario GEIPLAMIN</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial;
-    background: linear-gradient(135deg, #1a2a3a, #0f1720);
+    background: #1a2a3a;
     color: white;
 }
 
-/* TITULO */
 h1 {
     text-align: center;
     padding: 20px;
 }
 
-/* CALENDARIO */
 .calendar {
     max-width: 900px;
     margin: auto;
@@ -28,7 +26,6 @@ h1 {
     overflow: hidden;
 }
 
-/* CABECERA */
 .calendar-header {
     text-align: center;
     padding: 15px;
@@ -36,7 +33,6 @@ h1 {
     background: #34495e;
 }
 
-/* DIAS SEMANA */
 .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -49,33 +45,23 @@ h1 {
     font-weight: bold;
 }
 
-/* GRID DIAS */
 .grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
 
-/* DIA */
 .day {
     min-height: 100px;
     border: 1px solid #555;
     padding: 5px;
-    position: relative;
     background: #ecf0f1;
     color: black;
 }
 
-/* FINES DE SEMANA */
 .weekend {
     background: #f5cba7;
 }
 
-/* NUMERO */
-.day-number {
-    font-weight: bold;
-}
-
-/* EVENTOS */
 .event {
     background: #d35400;
     color: white;
@@ -84,16 +70,6 @@ h1 {
     border-radius: 5px;
     font-size: 12px;
 }
-
-/* PANEL LATERAL */
-.sidebar {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-}
-
 </style>
 </head>
 
@@ -103,85 +79,72 @@ h1 {
 
 <div class="calendar">
 
-    <div class="calendar-header">Abril 2026</div>
+<div class="calendar-header">Abril 2026</div>
 
-    <div class="days">
-        <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
-    </div>
-
-    <div class="grid">
-
-        <!-- VACÍOS -->
-        <div class="day"></div>
-        <div class="day"></div>
-
-        <!-- DÍAS -->
-        <div class="day"><div class="day-number">1</div></div>
-        <div class="day"><div class="day-number">2</div></div>
-        <div class="day"><div class="day-number">3</div></div>
-        <div class="day weekend"><div class="day-number">4</div></div>
-        <div class="day weekend"><div class="day-number">5</div></div>
-
-        <div class="day weekend"><div class="day-number">6</div></div>
-        <div class="day"><div class="day-number">7</div></div>
-        <div class="day"><div class="day-number">8</div></div>
-
-        <div class="day">
-            <div class="day-number">9</div>
-            <div class="event">9:00 AM Introducción</div>
-        </div>
-
-        <div class="day"><div class="day-number">10</div></div>
-        <div class="day weekend"><div class="day-number">11</div></div>
-        <div class="day weekend"><div class="day-number">12</div></div>
-
-        <div class="day"><div class="day-number">13</div></div>
-        <div class="day"><div class="day-number">14</div></div>
-
-        <div class="day">
-            <div class="day-number">15</div>
-            <div class="event">Conferencia Deswik</div>
-        </div>
-
-        <div class="day"><div class="day-number">16</div></div>
-        <div class="day"><div class="day-number">17</div></div>
-        <div class="day weekend"><div class="day-number">18</div></div>
-        <div class="day weekend"><div class="day-number">19</div></div>
-
-        <div class="day weekend"><div class="day-number">20</div></div>
-        <div class="day"><div class="day-number">21</div></div>
-        <div class="day"><div class="day-number">22</div></div>
-        <div class="day"><div class="day-number">23</div></div>
-
-        <div class="day">
-            <div class="day-number">24</div>
-            <div class="event">Manual Datamine</div>
-        </div>
-
-        <div class="day weekend"><div class="day-number">25</div></div>
-        <div class="day weekend"><div class="day-number">26</div></div>
-
-        <div class="day weekend"><div class="day-number">27</div></div>
-        <div class="day"><div class="day-number">28</div></div>
-        <div class="day"><div class="day-number">29</div></div>
-
-        <div class="day">
-            <div class="day-number">30</div>
-            <div class="event">Entrega Final</div>
-        </div>
-
-    </div>
-
+<div class="days">
+<div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
 </div>
 
-<div class="sidebar">
-    <h3>📌 Próximas Actividades</h3>
-    <ul>
-        <li>9:00 AM - Introducción a Planeamiento</li>
-        <li>Conferencia Deswik</li>
-        <li>Manual Datamine</li>
-        <li>Entrega Final Proyecto</li>
-    </ul>
+<div class="grid">
+
+<div class="day"></div>
+<div class="day"></div>
+
+<div class="day">1</div>
+<div class="day">2</div>
+<div class="day">3</div>
+<div class="day weekend">4</div>
+<div class="day weekend">5</div>
+
+<div class="day weekend">6</div>
+<div class="day">7</div>
+<div class="day">8</div>
+
+<div class="day">
+9
+<div class="event">Intro Planeamiento</div>
+</div>
+
+<div class="day">10</div>
+<div class="day weekend">11</div>
+<div class="day weekend">12</div>
+
+<div class="day">13</div>
+<div class="day">14</div>
+
+<div class="day">
+15
+<div class="event">Conf. Deswik</div>
+</div>
+
+<div class="day">16</div>
+<div class="day">17</div>
+<div class="day weekend">18</div>
+<div class="day weekend">19</div>
+
+<div class="day weekend">20</div>
+<div class="day">21</div>
+<div class="day">22</div>
+<div class="day">23</div>
+
+<div class="day">
+24
+<div class="event">Manual Datamine</div>
+</div>
+
+<div class="day weekend">25</div>
+<div class="day weekend">26</div>
+
+<div class="day weekend">27</div>
+<div class="day">28</div>
+<div class="day">29</div>
+
+<div class="day">
+30
+<div class="event">Entrega Final</div>
+</div>
+
+</div>
 </div>
 
 </body>
