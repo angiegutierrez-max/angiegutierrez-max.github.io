@@ -16,15 +16,26 @@ body {
 /* Header */
 header {
     background-image: url('GEIPLAMIN.png'); 
-    background-size: contain;    /* IMPORTANTE: Muestra la imagen COMPLETA sin cortes */
+    background-size: contain;    /* Esto hace que la imagen se vea completa */
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #ff7a00;   /* Rellena los costados con el naranja oficial */
-    height: 350px;               /* Altura ideal para que se luzca el diseño */
+    background-color: #ff7a00;   /* Rellena los lados con naranja */
+    height: 350px;               
     width: 100%;
-    margin: 0;
-    padding: 0;
-    color: transparent;          /* ESTO OCULTA EL TEXTO SUPERPUESTO */
+}
+
+/* Esto borra el texto negro que se amontona sobre la imagen */
+header h1, header p {
+    display: none;
+}
+
+/* Este es el estilo para el título que quieres abajo */
+.titulo-centrado {
+    text-align: center;
+    color: #ff7a00;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 30px;
 }
     
 /* Navegación */
@@ -137,19 +148,15 @@ footer {
     <a href="#recursos">Material</a>
     <a href="#software">Software</a>
     <a href="#eventos">Eventos</a>
-    
 </nav>
-<div style="text-align: center; margin: 30px 20px; color: #1a1a1a;">
-    <p style="font-weight: bold; font-size: 22px; margin: 0;">
-        Repositorio de Planeamiento Minero UNMSM
-    </p>
-    <hr style="width: 50px; border: 2px solid #ff7a00; margin-top: 10px;">
+
+<div class="titulo-centrado">
+    Repositorio de Planeamiento Minero UNMSM
 </div>
+
 <section id="inicio">
-    <h2>Bienvenidos</h2>
     <p>Bienvenidos al repositorio académico enfocado en planeamiento minero para estudiantes de Ingeniería de Minas.</p>
-    
-    ```
+<div class="card">
 <h3>📚 Material Bibliográfico</h3>
 <p>Libros, PDFs y contenido académico de planeamiento.</p>
 <button onclick="document.getElementById('recursos').scrollIntoView()">Explorar</button>
