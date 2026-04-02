@@ -1,225 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEIPLAMIN - Repositorio Minero</title>
-<style>
-/* Estilo general */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fdf6ec;
-    color: #1a1a1a;
-}
+    <meta charset="UTF-8">
+    <title>GEIPLAMIN - Repositorio Minero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #0f172a;
+            color: white;
+        }
 
-/* Header */
-header {
-    background: linear-gradient(90deg, #ff7a00, #ff9a3c);
-    padding: 25px;
-    text-align: center;
-    color: white;
-}
+        header {
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
+            padding: 20px;
+            text-align: center;
+        }
 
-/* Navegación */
-nav {
-    background: #000000;
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-nav a {
-    color: #ffb066;
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        nav {
+            background-color: #020617;
+            padding: 10px;
+            text-align: center;
+        }
 
-/* Secciones */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
+        nav a {
+            color: #38bdf8;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-/* Cards */
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px;
-    border-radius: 12px;
-    display: inline-block;
-    width: 260px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    vertical-align: top;
-}
-button {
-    background: #ff7a00;
-    border: none;
-    padding: 10px 15px;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-button:hover {
-    background: #e56700;
-}
+        section {
+            padding: 40px;
+            text-align: center;
+        }
 
-/* Footer */
-footer {
-    background: #000000;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+        .card {
+            background-color: #1e293b;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 250px;
+        }
 
-/* Calendario */
-.calendar {
-    max-width: 900px;
-    margin: 30px auto;
-    background: #2c3e50;
-    border-radius: 10px;
-    overflow: hidden;
-    color: white;
-}
-.calendar-header {
-    text-align: center;
-    padding: 15px;
-    font-size: 28px;
-    background: #34495e;
-}
-.days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    background: #ff7a00;
-}
-.days div {
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-.grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
-.day {
-    min-height: 80px;
-    border: 1px solid #555;
-    padding: 5px;
-    background: #ecf0f1;
-    color: black;
-}
-.weekend {
-    background: #f5cba7;
-}
-.event {
-    background: #d35400;
-    color: white;
-    padding: 3px;
-    margin-top: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-}
-</style>
+        footer {
+            background-color: #020617;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
+
 <header>
-<h1>GEIPLAMIN</h1>
-<p>Repositorio de Planeamiento Minero UNMSM</p>
+    <h1>GEIPLAMIN</h1>
+    <p>Repositorio de Planeamiento Minero UNMSM</p>
 </header>
 
 <nav>
-<a href="#inicio">Inicio</a>
-<a href="#recursos">Material</a>
-<a href="#software">Software</a>
-<a href="#charlas">Charlas</a>
-<a href="#eventos">Eventos</a>
+    <a href="#">Inicio</a>
+    <a href="#">Recursos</a>
+    <a href="#">Software</a>
+    <a href="#">Eventos</a>
 </nav>
 
-<section id="inicio">
-<h2>Bienvenidos</h2>
-<p>Repositorio académico enfocado en planeamiento minero para estudiantes de Ingeniería de Minas.</p>
-<div class="card">
-<h3>📚 Material Bibliográfico</h3>
-<p>Libros, PDFs y contenido académico de planeamiento.</p>
-<button onclick="document.getElementById('recursos').scrollIntoView()">Explorar</button>
-</div>
-<div class="card">
-<h3>💻 Software</h3>
-<p>Manuales y recursos de software minero.</p>
-<button onclick="document.getElementById('software').scrollIntoView()">Ver recursos</button>
-</div>
-<div class="card">
-<h3>🎥 Charlas</h3>
-<p>Grabaciones de ponencias y charlas mineras.</p>
-<button onclick="document.getElementById('charlas').scrollIntoView()">Ver charlas</button>
-</div>
-</section>
+<section>
+    <h2>Bienvenidos</h2>
+    <p>Este repositorio reúne materiales, apuntes y herramientas para estudiantes de Ingeniería de Minas.</p>
 
-<section id="recursos">
-<h2>Material Bibliográfico</h2>
-<p>Aquí encontrarás libros, apuntes y material académico de planeamiento minero.</p>
-<button onclick="window.open('https://drive.google.com')">Acceder al material</button>
-</section>
+    <div class="card">
+        <h3>📚 Apuntes</h3>
+        <p>Material académico organizado por cursos.</p>
+    </div>
 
-<section id="software">
-<h2>Software</h2>
-<p>Manuales, guías y acceso a licencias de software minero.</p>
-<div class="card">Manual Datamine</div>
-<div class="card">Manual Deswik</div>
-<div class="card">Licencias (acceso restringido)</div>
-</section>
+    <div class="card">
+        <h3>💻 Software</h3>
+        <p>Recursos de Datamine, Deswik y más.</p>
+    </div>
 
-<section id="charlas">
-<h2>Charlas</h2>
-<p>Aquí encontrarás los enlaces a las grabaciones de nuestras charlas:</p>
-<ul>
-<li><a href="https://drive.google.com/charla1" target="_blank">Charla 1</a></li>
-<li><a href="https://drive.google.com/charla2" target="_blank">Charla 2</a></li>
-<li><a href="https://drive.google.com/charla3" target="_blank">Charla 3</a></li>
-<!-- Puedes seguir agregando más enlaces aquí -->
-</ul>
-</section>
-
-<section id="eventos">
-<h2>Calendario 2026</h2>
-<p>Agenda de actividades GEIPLAMIN</p>
-
-<!-- Aquí va TODO el calendario de Abril a Diciembre 2026 que te pasé antes -->
-<!-- CALENDARIOS DE ABRIL A DICIEMBRE 2026 -->
-
-<!-- Abriré Abril como ejemplo, el resto igual -->
-<div class="calendar">
-<div class="calendar-header">Abril 2026</div>
-<div class="days">
-<div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
-</div>
-<div class="grid">
-<div class="day"></div><div class="day"></div>
-<div class="day">1</div><div class="day">2</div><div class="day">3</div>
-<div class="day weekend">4</div><div class="day weekend">5</div>
-<div class="day">6</div><div class="day">7</div><div class="day">8</div>
-<div class="day">9</div><div class="day">10</div>
-<div class="day weekend">11</div><div class="day weekend">12</div>
-<div class="day">13</div><div class="day">14</div><div class="day">15</div>
-<div class="day">16</div><div class="day">17</div>
-<div class="day weekend">18</div><div class="day weekend">19</div>
-<div class="day">20</div><div class="day">21</div><div class="day">22</div>
-<div class="day">23</div><div class="day">24</div>
-<div class="day weekend">25</div><div class="day weekend">26</div>
-<div class="day">27</div><div class="day">28</div><div class="day">29</div>
-<div class="day">30</div>
-</div>
-</div>
-
-<!-- Aquí agregas Mayo a Diciembre siguiendo el mismo formato que te pasé antes -->
+    <div class="card">
+        <h3>🎥 Charlas</h3>
+        <p>Grabaciones y eventos académicos.</p>
+    </div>
 
 </section>
 
 <footer>
-<p>© 2026 GEIPLAMIN - Todos los derechos reservados | Creado por Angie Gutiérrez</p>
+    <p>© 2026 GEIPLAMIN - UNMSM</p>
 </footer>
+
 </body>
 </html>
