@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEIPLAMIN - Repositorio Minero</title>
+<title>GEIPLAMIN - Calendario 2026</title>
 
 <style>
-/* Estilo general */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,7 +13,6 @@ body {
     color: #1a1a1a;
 }
 
-/* Header */
 header {
     background: linear-gradient(90deg, #ff7a00, #ff9a3c);
     padding: 25px;
@@ -22,7 +20,6 @@ header {
     color: white;
 }
 
-/* Navegación */
 nav {
     background: #000000;
     padding: 15px;
@@ -39,39 +36,11 @@ nav a {
     font-weight: bold;
 }
 
-/* Secciones */
 section {
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* Cards */
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px;
-    border-radius: 12px;
-    display: inline-block;
-    width: 260px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    vertical-align: top;
-}
-
-button {
-    background: #ff7a00;
-    border: none;
-    padding: 10px 15px;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #e56700;
-}
-
-/* Footer */
 footer {
     background: #000000;
     color: white;
@@ -79,7 +48,6 @@ footer {
     text-align: center;
 }
 
-/* Calendario */
 .calendar {
     max-width: 900px;
     margin: 30px auto;
@@ -135,7 +103,6 @@ footer {
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -145,83 +112,92 @@ footer {
 
 <nav>
 <a href="#inicio">Inicio</a>
-<a href="#recursos">Material</a>
-<a href="#software">Software</a>
-<a href="#eventos">Eventos</a>
+<a href="#eventos">Calendario</a>
 </nav>
 
 <section id="inicio">
 <h2>Bienvenidos</h2>
 <p>Repositorio académico enfocado en planeamiento minero para estudiantes de Ingeniería de Minas.</p>
-
-<div class="card">
-<h3>📚 Material Bibliográfico</h3>
-<p>Libros, PDFs y contenido académico de planeamiento.</p>
-<button onclick="document.getElementById('recursos').scrollIntoView()">Explorar</button>
-</div>
-
-<div class="card">
-<h3>💻 Software</h3>
-<p>Manuales y recursos de software minero.</p>
-<button onclick="document.getElementById('software').scrollIntoView()">Ver recursos</button>
-</div>
-
-<div class="card">
-<h3>🎥 Charlas</h3>
-<p>Eventos y contenido audiovisual.</p>
-<button onclick="document.getElementById('eventos').scrollIntoView()">Ir al calendario</button>
-</div>
-
-</section>
-
-<section id="recursos">
-<h2>Material Bibliográfico</h2>
-<p>Aquí encontrarás libros, apuntes y material académico de planeamiento minero.</p>
-<button onclick="window.open('https://drive.google.com')">Acceder al material</button>
-</section>
-
-<section id="software">
-<h2>Software</h2>
-<p>Manuales, guías y acceso a licencias de software minero.</p>
-
-<div class="card">Manual Datamine</div>
-<div class="card">Manual Deswik</div>
-<div class="card">Licencias (acceso restringido)</div>
 </section>
 
 <section id="eventos">
 <h2>Calendario 2026</h2>
-<p>Agenda de actividades GEIPLAMIN</p>
-
-<!-- CALENDARIO ABRIL 2026 -->
-<div class="calendar">
-  <div class="calendar-header">Abril 2026</div>
-  <div class="days">
-    <div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div>
-  </div>
-  <div class="grid">
-    <div class="day"></div><div class="day"></div>
-    <div class="day">1</div><div class="day">2</div><div class="day">3</div>
-    <div class="day weekend">4</div><div class="day weekend">5</div>
-    <div class="day">6</div><div class="day">7</div><div class="day">8</div>
-    <div class="day">9</div><div class="day">10</div>
-    <div class="day weekend">11</div><div class="day weekend">12</div>
-    <div class="day">13</div><div class="day">14</div>
-    <div class="day">15</div><div class="day">16</div><div class="day">17</div>
-    <div class="day weekend">18</div><div class="day weekend">19</div>
-    <div class="day">20</div><div class="day">21</div><div class="day">22</div>
-    <div class="day">23</div><div class="day">24</div>
-    <div class="day weekend">25</div><div class="day weekend">26</div>
-    <div class="day">27</div><div class="day">28</div><div class="day">29</div>
-    <div class="day">30</div>
-  </div>
-</div>
-
+<div id="calendarios"></div>
 </section>
 
 <footer>
 <p>© 2026 GEIPLAMIN - UNMSM | Creado por Angie Gutiérrez</p>
 </footer>
+
+<script>
+// Función para generar los meses
+const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const diasSemana = ["L","M","X","J","V","S","D"];
+const calendarioContainer = document.getElementById("calendarios");
+
+for(let m=0; m<12; m++){
+    const date = new Date(2026, m, 1);
+    const firstDay = (date.getDay() + 6) % 7; // Ajuste para que lunes=0
+    const lastDay = new Date(2026, m+1, 0).getDate();
+
+    const calDiv = document.createElement("div");
+    calDiv.className = "calendar";
+
+    // Header
+    const header = document.createElement("div");
+    header.className = "calendar-header";
+    header.textContent = `${meses[m]} 2026`;
+    calDiv.appendChild(header);
+
+    // Días de la semana
+    const daysRow = document.createElement("div");
+    daysRow.className = "days";
+    diasSemana.forEach(d => {
+        const div = document.createElement("div");
+        div.textContent = d;
+        daysRow.appendChild(div);
+    });
+    calDiv.appendChild(daysRow);
+
+    // Grid de días
+    const grid = document.createElement("div");
+    grid.className = "grid";
+
+    // Espacios vacíos antes del primer día
+    for(let i=0;i<firstDay;i++){
+        const empty = document.createElement("div");
+        empty.className = "day";
+        grid.appendChild(empty);
+    }
+
+    // Días del mes
+    for(let d=1; d<=lastDay; d++){
+        const dayDiv = document.createElement("div");
+        dayDiv.className = "day";
+
+        // Marcar fines de semana
+        const dayOfWeek = (firstDay + d - 1) % 7;
+        if(dayOfWeek === 5 || dayOfWeek === 6) dayDiv.classList.add("weekend");
+
+        dayDiv.textContent = d;
+
+        // Aquí puedes agregar eventos de ejemplo
+        /*
+        if(d===5 && m===3){ // Abril 5
+            const ev = document.createElement("div");
+            ev.className="event";
+            ev.textContent="Evento ejemplo";
+            dayDiv.appendChild(ev);
+        }
+        */
+
+        grid.appendChild(dayDiv);
+    }
+
+    calDiv.appendChild(grid);
+    calendarioContainer.appendChild(calDiv);
+}
+</script>
 
 </body>
 </html>
