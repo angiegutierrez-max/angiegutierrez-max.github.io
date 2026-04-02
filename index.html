@@ -16,36 +16,26 @@ body {
 /* Header */
 header {
     background-image: url('GEIPLAMIN.png'); 
-    background-size: contain;    /* IMPORTANTE: Muestra la imagen COMPLETA sin cortes */
+    background-size: contain;    /* Esto hace que la imagen se vea completa */
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #ff7a00;   /* Rellena los lados con el naranja oficial */
-    height: 350px;               /* Altura ideal para que se luzca el diseño */
+    background-color: #ff7a00;   /* Rellena los lados con naranja */
+    height: 350px;               
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
 
-/* Esto elimina el texto negro que se amontona sobre la imagen */
+/* Esto borra el texto negro que se amontona sobre la imagen */
 header h1, header p {
     display: none;
 }
 
-/* Estilo para el título que quieres centrado abajo */
-.subtitulo-repositorio {
+/* Este es el estilo para el título que quieres abajo */
+.titulo-centrado {
     text-align: center;
-    color: #1a1a1a;
-    margin: 30px 20px 10px 20px;
+    color: #ff7a00;
     font-size: 28px;
     font-weight: bold;
-}
-
-.linea-decorativa {
-    width: 60px;
-    height: 4px;
-    background-color: #ff7a00;
-    margin: 0 auto 30px auto;
-    border-radius: 2px;
+    margin-top: 30px;
 }
     
 /* Navegación */
@@ -152,21 +142,20 @@ footer {
 </style>
 </head>
 <body>
-<header>
-<h1>GEIPLAMIN</h1>
-<p>Repositorio de Planeamiento Minero UNMSM</p>
-</header>
 
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#recursos">Material</a>
-<a href="#software">Software</a>
-<a href="#eventos">Eventos</a>
+<header></header> <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#recursos">Material</a>
+    <a href="#software">Software</a>
+    <a href="#eventos">Eventos</a>
 </nav>
 
+<div class="titulo-centrado">
+    Repositorio de Planeamiento Minero UNMSM
+</div>
+
 <section id="inicio">
-<h2>Bienvenidos</h2>
-<p>Repositorio académico enfocado en planeamiento minero para estudiantes de Ingeniería de Minas.</p>
+    <p>Bienvenidos al repositorio académico enfocado en planeamiento minero para estudiantes de Ingeniería de Minas.</p>
 <div class="card">
 <h3>📚 Material Bibliográfico</h3>
 <p>Libros, PDFs y contenido académico de planeamiento.</p>
