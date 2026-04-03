@@ -173,8 +173,8 @@ footer {
     <a href="javascript:void(0)" onclick="mostrarSeccion('quienes-somos')">👥 Nosotros</a>
     <a href="javascript:void(0)" onclick="mostrarSeccion('grupos-inv')">🔬 Grupos</a>
     <a href="javascript:void(0)" onclick="mostrarSeccion('convocatoria')">📢 Convocatoria</a>
-    <a href="#software" onclick="volverInicio()">Software</a>
-    <a href="#eventos" onclick="volverInicio()">Eventos</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('software')">Software</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('eventos')">Eventos</a>
 </nav>
 
 <div class="titulo-centrado">
@@ -189,21 +189,21 @@ footer {
 <button onclick="mostrarMaterial()">Explorar</button>
 </div>
 <div class="card">
-<h3>💻 Software</h3>
-<p>Manuales y recursos de software minero.</p>
-<button onclick="document.getElementById('software').scrollIntoView()">Ver recursos</button>
+    <h3>💻 Software</h3>
+    <p>Manuales y recursos de software minero.</p>
+    <button onclick="mostrarSeccion('software')">Ver recursos</button>
 </div>
 <div class="card">
-        <h3>Eventos y talleres 🎓</h3>
-        <p>Actividades programadas.</p>
-        <button onclick="document.getElementById('eventos').scrollIntoView()">Ir al calendario</button>
-    </div>
+    <h3>Eventos y talleres 🎓</h3>
+    <p>Actividades programadas.</p>
+    <button onclick="mostrarSeccion('eventos')">Ir al calendario</button>
+</div>
 
-    <div class="card">
-        <h3>🎥 Charlas</h3>
-        <p>Grabaciones de charlas anteriores.</p>
-        <button onclick="window.open('https://drive.google.com/drive/folders/15pMKip8ih5PICY_FSBlsQsqOQPW4va9Z', '_blank')">Ver Charlas</button>
-    </div>
+<div class="card">
+    <h3>🎥 Charlas</h3>
+    <p>Grabaciones de charlas anteriores.</p>
+    <button onclick="window.open('https://drive.google.com/drive/folders/15pMKip8ih5PICY_FSBlsQsqOQPW4va9Z', '_blank')">Ver Charlas</button>
+</div>
 </section> 
 
 <section id="quienes-somos" style="display:none;">
@@ -249,7 +249,7 @@ footer {
     </div>
 </section>
     
-<section id="software">
+<section id="software" style="display:none;">
 <h2>Software</h2>
 <p>Manuales, guías y acceso a licencias de software minero.</p>
 <div class="card">Manual Datamine</div>
@@ -258,7 +258,7 @@ footer {
 </section>
 
 
-<section id="eventos">
+<section id="eventos" style="display:none;">
 <h2>Calendario 2026</h2>
 <p>Agenda de actividades GEIPLAMIN</p>
 
@@ -519,8 +519,7 @@ footer {
 </footer>
 
 <script>
-
-// Esta función es el "interruptor maestro" que apaga todo antes de mostrar algo nuevo
+// 1. Esta función se queda igual (es la que apaga todo)
 function ocultarTodo() {
     const secciones = ['inicio', 'software', 'eventos', 'recursos', 'quienes-somos', 'grupos-inv', 'convocatoria'];
     secciones.forEach(id => {
@@ -529,31 +528,28 @@ function ocultarTodo() {
     });
 }
 
-// Esta función muestra la sección que elijas (Nosotros, Grupos, Convocatoria)
+// 2. Esta función es la que hace la "magia" de la pestaña nueva
 function mostrarSeccion(idSeccion) {
-    ocultarTodo(); // Primero limpiamos la pantalla
+    ocultarTodo(); // Borra lo que haya en pantalla
     const seccion = document.getElementById(idSeccion);
     if(seccion) {
-        seccion.style.display = 'block'; // Luego encendemos la sección elegida
+        seccion.style.display = 'block'; // Muestra solo lo que pediste
     }
-    window.scrollTo(0, 0); // Subimos al inicio
+    window.scrollTo(0, 0); // Sube al inicio de la página
 }
 
-// Función para ver el Material Bibliográfico (reutiliza la lógica anterior)
+// 3. Atajo para el material
 function mostrarMaterial() {
     mostrarSeccion('recursos');
 }
 
-// Función para volver a la pantalla principal
+// 4. AQUÍ ESTÁ EL CAMBIO IMPORTANTE:
+// Ahora, al volver al inicio, solo se verá el bloque de las "Cards"
 function volverInicio() {
-    ocultarTodo();
-    // En el inicio queremos ver estos 3 bloques juntos
-    document.getElementById('inicio').style.display = 'block';
-    document.getElementById('software').style.display = 'block';
-    document.getElementById('eventos').style.display = 'block';
+    ocultarTodo(); 
+    document.getElementById('inicio').style.display = 'block'; 
     window.scrollTo(0, 0);
 }
-    
 </script>
 </body>
 </html>
