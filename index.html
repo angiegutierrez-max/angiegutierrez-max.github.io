@@ -139,13 +139,36 @@ footer {
     border-radius: 5px;
     font-size: 12px;
 }
+    /* Esto oculta la sección al inicio */
+#recursos {
+    display: none; 
+}
+
+/* Estilo para que la lista de archivos se vea como un repositorio */
+.lista-repo {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: left;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.item-archivo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
 </style>
 </head>
 <body>
 
 <header></header> <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#recursos">Material</a>
+    <a href="javascript:void(0)" onclick="mostrarMaterial()">Material</a>
     <a href="#software">Software</a>
     <a href="#eventos">Eventos</a>
 </nav>
@@ -159,7 +182,7 @@ footer {
 <div class="card">
 <h3>📚 Material Bibliográfico</h3>
 <p>Libros, PDFs y contenido académico de planeamiento.</p>
-<button onclick="document.getElementById('recursos').scrollIntoView()">Explorar</button>
+<button onclick="mostrarMaterial()">Explorar</button>
 </div>
 <div class="card">
 <h3>💻 Software</h3>
@@ -177,13 +200,7 @@ footer {
         <p>Grabaciones de charlas anteriores.</p>
         <button onclick="window.open('https://drive.google.com/drive/folders/15pMKip8ih5PICY_FSBlsQsqOQPW4va9Z', '_blank')">Ver Charlas</button>
     </div>
-</section> ```
-
-<section id="recursos">
-<h2>Material Bibliográfico</h2>
-<p>Aquí encontrarás libros, apuntes y material académico de planeamiento minero.</p>
-<button onclick="window.open('https://drive.google.com/drive/folders/15pMKip8ih5PICY_FSBlsQsqOQPW4va9Z', '_blank')">Acceder al material</button>
-</section>
+</section> 
 
 <section id="software">
 <h2>Software</h2>
@@ -418,5 +435,32 @@ footer {
 <footer>
 <p>© 2026 GEIPLAMIN - Todos los derechos reservados</p>
 </footer>
+    <section id="recursos">
+    <h2>Material Bibliográfico</h2>
+    <div class="lista-repo">
+        <div class="item-archivo">
+            <div><strong>📕 Manual Práctico MinePlan N° 1</strong></div>
+            <a href="Manual Práctico MinePlan N° 1 - Mallas de perforación.pdf" target="_blank"><button>Ver PDF</button></a>
+        </div>
+        <div class="item-archivo">
+            <div><strong>📙 Algoritmo de Lerch & Grossman</strong></div>
+            <a href="ALGORITMO DE LERCH & GROSSMAN.pdf" target="_blank"><button>Ver PDF</button></a>
+        </div>
+        <div class="item-archivo">
+            <div><strong>📗 Uso de SIMSCHED y QPIT</strong></div>
+            <a href="USO DE SIMSCHED Y QPIT PARA LA OPTIMIZACIÓN Y DISEÑO EN OPENPIT.pdf" target="_blank"><button>Ver PDF</button></a>
+        </div>
+    </div>
+</section>
+
+<script>
+function mostrarMaterial() {
+    const seccion = document.getElementById('recursos');
+    seccion.style.display = 'block'; // Lo hace aparecer
+    setTimeout(() => {
+        seccion.scrollIntoView({ behavior: 'smooth' }); // Baja la pantalla suavemente
+    }, 100);
+}
+</script>
 </body>
 </html>
