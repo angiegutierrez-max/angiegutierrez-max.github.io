@@ -170,6 +170,9 @@ footer {
 <nav>
     <a href="javascript:void(0)" onclick="volverInicio()">Inicio</a>
     <a href="javascript:void(0)" onclick="mostrarMaterial()">Material</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('quienes-somos')">👥 Nosotros</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('grupos-inv')">🔬 Grupos</a>
+    <a href="javascript:void(0)" onclick="mostrarSeccion('convocatoria')">📢 Convocatoria</a>
     <a href="#software" onclick="volverInicio()">Software</a>
     <a href="#eventos" onclick="volverInicio()">Eventos</a>
 </nav>
@@ -203,6 +206,49 @@ footer {
     </div>
 </section> 
 
+<section id="quienes-somos" style="display:none;">
+    <h2>👥 ¿Quiénes Somos?</h2>
+    <div class="lista-repo" style="text-align: justify; line-height: 1.8;">
+        <p style="font-size: 18px; color: #333; margin-bottom: 25px;">
+            <strong>GEIPLAMIN</strong> es un colectivo estudiantil de la Escuela Profesional de Ingeniería de Minas de la <strong>UNMSM</strong>, dedicado a explorar, desarrollar y compartir conocimientos especializados en planeamiento minero, fomentando el aprendizaje y la investigación en este campo estratégico de la industria.
+        </p>
+        
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <div style="flex: 1; min-width: 280px; background: #fff8f0; padding: 20px; border-left: 5px solid #ff7a00; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <h3 style="margin-top: 0; color: #ff7a00;">🎯 Misión</h3>
+                <p>Impulsar el perfil profesional de los miembros del Capítulo, desarrollando una sólida base teórica y habilidades prácticas avanzadas en el ámbito del Planeamiento Minero.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 280px; background: #f0f4f8; padding: 20px; border-left: 5px solid #2c3e50; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <h3 style="margin-top: 0; color: #2c3e50;">👁️ Visión</h3>
+                <p>Ser reconocidos a nivel internacional como un grupo de estudio referente, capaz de formar líderes estudiantiles e ingenieros competentes que transformen la minería del futuro.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="grupos-inv" style="display:none;">
+    <h2>🔬 Grupos de Investigación</h2>
+    <div class="lista-repo">
+        <div class="item-archivo">
+            <div>
+                <strong>📂 Repositorio de Proyectos e Investigaciones</strong>
+                <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">Accede a nuestra carpeta compartida de Google Drive.</p>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1CYGBnZrehxe5AeovOPb6-GS9XCehoefC?usp=drive_link" target="_blank">
+                <button style="background: #2ecc71;">Abrir Drive</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="convocatoria" style="display:none;">
+    <h2>📢 Convocatoria GEIPLAMIN 2026</h2>
+    <div class="lista-repo" style="text-align: center; padding: 50px;">
+        <p style="color: #888; font-style: italic;">Próximamente publicaremos las bases aquí. ⚒️</p>
+    </div>
+</section>
+    
 <section id="software">
 <h2>Software</h2>
 <p>Manuales, guías y acceso a licencias de software minero.</p>
@@ -473,32 +519,41 @@ footer {
 </footer>
 
 <script>
-function mostrarMaterial() {
-    // 1. Escondemos las secciones de la "página principal"
-    document.getElementById('inicio').style.display = 'none';
-    document.getElementById('software').style.display = 'none';
-    document.getElementById('eventos').style.display = 'none';
-    
-    // 2. Mostramos la sección de los libros
-    const seccion = document.getElementById('recursos');
-    seccion.style.display = 'block'; 
-    
-    // 3. Subimos al inicio para que parezca una pestaña nueva
-    window.scrollTo(0, 0);
+
+// Esta función es el "interruptor maestro" que apaga todo antes de mostrar algo nuevo
+function ocultarTodo() {
+    const secciones = ['inicio', 'software', 'eventos', 'recursos', 'quienes-somos', 'grupos-inv', 'convocatoria'];
+    secciones.forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.style.display = 'none';
+    });
 }
 
+// Esta función muestra la sección que elijas (Nosotros, Grupos, Convocatoria)
+function mostrarSeccion(idSeccion) {
+    ocultarTodo(); // Primero limpiamos la pantalla
+    const seccion = document.getElementById(idSeccion);
+    if(seccion) {
+        seccion.style.display = 'block'; // Luego encendemos la sección elegida
+    }
+    window.scrollTo(0, 0); // Subimos al inicio
+}
+
+// Función para ver el Material Bibliográfico (reutiliza la lógica anterior)
+function mostrarMaterial() {
+    mostrarSeccion('recursos');
+}
+
+// Función para volver a la pantalla principal
 function volverInicio() {
-    // 1. Volvemos a mostrar todo lo que escondimos
+    ocultarTodo();
+    // En el inicio queremos ver estos 3 bloques juntos
     document.getElementById('inicio').style.display = 'block';
     document.getElementById('software').style.display = 'block';
     document.getElementById('eventos').style.display = 'block';
-    
-    // 2. Escondemos la sección de libros
-    document.getElementById('recursos').style.display = 'none';
-    
-    // 3. Subimos al inicio
     window.scrollTo(0, 0);
 }
+    
 </script>
 </body>
 </html>
